@@ -2,6 +2,9 @@ package com.longyuzichen.core.common;/**
  * Created by longyuzichen on 2016-12-01.
  */
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.util.Random;
 
 /**
@@ -11,6 +14,8 @@ import java.util.Random;
  * @date 2016-12-01 23:45
  */
 public class ShareCode {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ShareCode.class);
 
     /** 自定义进制(0,1没有加入,容易与o,l混淆) */
     private static final char[] r = new char[] { 'q', 'w', 'e', '8', 'a', 's', '2', 'd', 'z', 'x', '9', 'c', '7', 'p',
@@ -25,6 +30,7 @@ public class ShareCode {
     /** 序列最小长度 */
     private static final int s = 6;
 
+    private ShareCode(){}
 
     /**
      *
@@ -61,6 +67,7 @@ public class ShareCode {
             }
             str += sb.toString();
         }
+        LOGGER.debug("生产的唯一码信息为：{}",str);
         return str;
     }
 
