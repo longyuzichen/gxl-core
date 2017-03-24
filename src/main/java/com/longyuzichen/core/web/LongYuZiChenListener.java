@@ -7,7 +7,7 @@ import javax.servlet.ServletContextEvent;
 import javax.servlet.ServletContextListener;
 
 /**
- * @desc  项目第一次启动时加载
+ * @desc  启动监听日志-佛祖保佑
  * @auto longyuzichen@126.com
  * @date 2016年11月4日 下午3:31:41
  * @version V1.0

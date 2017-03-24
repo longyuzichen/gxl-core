@@ -20,7 +20,7 @@ import java.util.*;
  *
  * @author longyuzichen@126.com
  * @version V1.0
- * @desc
+ * @desc XML工具
  * @date 2017-03-24 23:23
  */
 public class XmlUtil {

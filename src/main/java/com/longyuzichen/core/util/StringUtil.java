@@ -8,7 +8,7 @@ import org.slf4j.LoggerFactory;
 import java.io.UnsupportedEncodingException;
 
 /**
- * @desc
+ * @desc 字符串工具
  * @auto longyuzichen@126.com
  * @date 2017-03-12 21:20
  */

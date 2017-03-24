@@ -13,7 +13,7 @@ import java.util.ResourceBundle;
  *
  * @author longyuzichen@126.com
  * @version V1.0
- * @desc
+ * @desc 文件工具类
  * @date 2017-03-24 22:50
  */
 public class FileUtil {

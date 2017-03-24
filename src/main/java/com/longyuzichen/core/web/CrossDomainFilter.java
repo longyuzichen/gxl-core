@@ -7,7 +7,6 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * @param
  * @desc 设置访问请求跨域
  * @auto longyuzichen@126.com
  * @date 2016-12-21 21:48

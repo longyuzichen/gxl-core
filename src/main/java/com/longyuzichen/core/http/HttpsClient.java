@@ -25,7 +25,7 @@ import java.security.KeyStore;
  *
  * @author longyuzichen@126.com
  * @version V1.0
- * @desc
+ * @desc HTTPS协议请求
  * @date 2017-03-24 22:41
  */
 @SuppressWarnings("ALL")

@@ -13,7 +13,7 @@ import java.io.OutputStream;
  *
  * @author longyuzichen@126.com
  * @version V1.0
- * @desc
+ * @desc 图片工具类
  * @date 2017-03-24 23:41
  */
 public class ImageUtil {

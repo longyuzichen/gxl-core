@@ -13,7 +13,7 @@ import java.util.Random;
  *
  * @author longyuzichen@126.com
  * @version V1.0
- * @desc
+ * @desc 验证码生产
  * @date 2017-03-24 23:45
  */
 public class IdentifyingCode {
