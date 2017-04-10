@@ -12,7 +12,7 @@ import java.util.Map;
  * @date 2017-03-25 19:56
  */
 public class Result implements Serializable{
-    private String code ; //返回状态码
+    private int code ; //返回状态码
     private String message; //返回信息
 
     private String result; //业务结果
@@ -21,29 +21,29 @@ public class Result implements Serializable{
 
     private Map<String,Object> data; //信息集
 
-    public Result(String code) {
+    public Result(int code) {
         this.code = code;
     }
 
-    public Result(String code, String message) {
+    public Result(int code, String message) {
         this.code = code;
         this.message = message;
     }
 
-    public Result(String code, String result, String error) {
+    public Result(int code, String result, String error) {
         this.code = code;
         this.result = result;
         this.error = error;
     }
 
-    public Result(String code, String result, String error, String desc) {
+    public Result(int code, String result, String error, String desc) {
         this.code = code;
         this.result = result;
         this.error = error;
         this.desc = desc;
     }
 
-    public Result(String code, String result, Map<String, Object> data) {
+    public Result(int code, String result, Map<String, Object> data) {
         this.code = code;
         this.result = result;
         this.data = data;
