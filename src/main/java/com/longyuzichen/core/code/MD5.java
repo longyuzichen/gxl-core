@@ -7,7 +7,7 @@ import java.security.MessageDigest;
  *
  * @author longyuzichen@126.com
  * @version V1.0
- * @desc
+ * @desc MD5加密工具类
  * @date 2017-03-24 23:51
  */
 public class MD5 {
@@ -18,6 +18,7 @@ public class MD5 {
 
     /**
      * 转换字节数组为16进制字串
+     *
      * @param b 字节数组
      * @return 16进制字串
      * http://www.jq-school.com
@@ -58,14 +59,13 @@ public class MD5 {
             resultString = new String(origin);
             MessageDigest md = MessageDigest.getInstance("MD5");
             resultString = byteArrayToString(md.digest(resultString.getBytes()));
-        }
-        catch (Exception ex) {
+        } catch (Exception ex) {
             ex.printStackTrace();
         }
         return resultString;
     }
+
     /**
-     *
      * @param args
      */
     public static void main(String[] args) {

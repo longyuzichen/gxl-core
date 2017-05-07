@@ -16,7 +16,7 @@ import java.security.spec.X509EncodedKeySpec;
  *
  * @author longyuzichen@126.com
  * @version V1.0
- * @desc RSA签名
+ * @desc RSA签名工具类
  * @date 2017-03-24 23:49
  */
 public class RSA {
