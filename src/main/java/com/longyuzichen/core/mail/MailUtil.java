@@ -170,13 +170,15 @@ public class MailUtil {
             body.setDataHandler(new DataHandler(fds));
             //body.setHeader("Content-ID", cid);
             body.setContentID(cid);
+            multipart.addBodyPart(body);
         }
 
         //设置附件
         if (null != fileNames && fileNames.length > 0) {
             for (String file : fileNames) {
                 MimeBodyPart attache = new MimeBodyPart();
-                attache.setDataHandler(new DataHandler(new FileDataSource(new File(file))));
+                attache.setDataHandler(new DataHandler(new FileDataSource(file)));
+                attache.setFileName(file);
                 multipart.addBodyPart(attache);
             }
         }
