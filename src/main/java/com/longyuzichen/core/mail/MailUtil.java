@@ -2,17 +2,14 @@ package com.longyuzichen.core.mail;
 
 
 import com.sun.mail.util.MailSSLSocketFactory;
-import com.sun.org.apache.xpath.internal.operations.Mult;
 
 import javax.activation.DataHandler;
 import javax.activation.DataSource;
 import javax.activation.FileDataSource;
 import javax.mail.*;
-import javax.mail.internet.InternetAddress;
-import javax.mail.internet.MimeBodyPart;
-import javax.mail.internet.MimeMessage;
-import javax.mail.internet.MimeMultipart;
+import javax.mail.internet.*;
 import java.io.File;
+import java.io.UnsupportedEncodingException;
 import java.security.GeneralSecurityException;
 import java.util.Date;
 import java.util.Properties;
@@ -26,19 +23,20 @@ import java.util.Properties;
  * @date 2017-05-07 21:58
  */
 public class MailUtil {
-    enum MimeType {
-        HTML_GBK, HTML_UTF8, PLAIN
-    }
+//    enum MimeType {
+//        HTML_GBK, HTML_UTF8, PLAIN
+//    }
 
     private static final Properties props = new Properties();
-    private static final String MIMETYPE = "text/html;charset=utf-8";
+    public static final String MIMETYPE = "text/html;charset=utf-8";
+    public static final int PORT = 25;
     private static Session session = null;
 
     private static String host = "";
     private static String from = "";
     private static String user = "";
     private static String password = "";
-    private static int prot = 25;
+    private static int prot = PORT;
     private static String protocol = "smtp";
     private static int port = 25;
     private static boolean auth = true;
@@ -46,15 +44,15 @@ public class MailUtil {
     private static boolean isDebug = false;
 
     public MailUtil(String host, String from, String user, String password) {
-        this(host, from, user, password, 25);
+        this(host, from, user, password, PORT);
     }
 
     public MailUtil(String host, String from, String user, String password, int prot) {
-        this(host, from, user, password, "smtp", prot, false,false);
+        this(host, from, user, password, "smtp", prot, false, false);
     }
 
     public MailUtil(String host, String from, String user, String password, boolean isDebug) {
-        this(host, from, user, password, "smtp", 25, false,  isDebug);
+        this(host, from, user, password, "smtp", PORT, false, isDebug);
     }
 
     public MailUtil(String host, String from, String user, String password, String protocol, int port,
@@ -65,7 +63,6 @@ public class MailUtil {
         this.password = password;
         this.protocol = protocol;
         this.port = port;
-       // this.auth = auth;
         this.sslEnable = sslEnable;
         this.isDebug = isDebug;
         init();
@@ -99,19 +96,24 @@ public class MailUtil {
     }
 
     public static void sendText(String to, String cc, String bcc, String subject, String text, String[] fileNames) throws MessagingException {
-        sendText(to, cc, bcc, subject, text, fileNames, "text/plain;charset=utf-8");
+        sendText(to, cc, bcc, subject, text, fileNames, MIMETYPE);
     }
-
-   /* public static void sendText(String to, String cc, String bcc, String subject, String text, String[] fileNames, String mimetype) throws MessagingException {
-        sendText(to, cc, bcc, subject, text, fileNames, mimetype);
-    }*/
 
     public static void sendText(String to, String subject, String text, String[] fileNames, String mimetype) throws MessagingException {
         sendText(to, null, null, subject, text, fileNames, mimetype);
     }
 
+    /**
+     * @param to        收件人邮件地址
+     * @param cc        抄送人邮箱地址
+     * @param bcc       密送人邮箱地址（网易可能会识别为垃圾邮件，直接抛出异常）
+     * @param subject   主题
+     * @param text      内容
+     * @param fileNames 附件名称
+     * @param mimetype  类型
+     * @throws MessagingException
+     */
     private static void sendText(String to, String cc, String bcc, String subject, String text, String[] fileNames, String mimetype) throws MessagingException {
-
         MimeMessage mimeMessage = send(to, cc, bcc, subject, text, null, null, fileNames, mimetype);
         Transport.send(mimeMessage);
     }
@@ -145,12 +147,11 @@ public class MailUtil {
 
     private static MimeMessage send(String to, String cc, String bcc, String subject, String text, String cid, String cidFile, String[] fileNames, String mimetype) throws MessagingException {
         MimeMessage mimeMessage = createMimeMessage(to, cc, bcc);
-
         mimeMessage.setSubject(subject, "UTF-8");
         mimeMessage.setSentDate(new Date());
-        //mimeMessage.setText(text,"UTF-8");
         Multipart multipart = sendTextMuilt(text, cid, cidFile, fileNames, mimetype);
         mimeMessage.setContent(multipart);
+        mimeMessage.saveChanges(); // 保存邮件
         return mimeMessage;
     }
 
@@ -160,15 +161,12 @@ public class MailUtil {
         Multipart multipart = new MimeMultipart();
         //创建邮件内容
         MimeBodyPart body = new MimeBodyPart();
-        //设置邮件内容
         body.setContent(text, (mimetype != null && !"".equals(mimetype) ? mimetype : MIMETYPE));
         multipart.addBodyPart(body);//发件内容
-
-        if (null != cid && null != cidFile) {
+        if (null != cid && null != cidFile && !"".equals(cidFile)) {
             body = new MimeBodyPart();
             DataSource fds = new FileDataSource(cidFile);
             body.setDataHandler(new DataHandler(fds));
-            //body.setHeader("Content-ID", cid);
             body.setContentID(cid);
             multipart.addBodyPart(body);
         }
@@ -176,13 +174,25 @@ public class MailUtil {
         //设置附件
         if (null != fileNames && fileNames.length > 0) {
             for (String file : fileNames) {
-                MimeBodyPart attache = new MimeBodyPart();
-                attache.setDataHandler(new DataHandler(new FileDataSource(file)));
-                attache.setFileName(file);
-                multipart.addBodyPart(attache);
+                if (file != null && !"".equals(file)) {  // 添加附件的内容
+                    File attachment = new File(file);
+                    BodyPart attachmentBodyPart = new MimeBodyPart();
+                    DataSource source = new FileDataSource(attachment);
+                    attachmentBodyPart.setDataHandler(new DataHandler(source));
+                    // 网上流传的解决文件名乱码的方法，其实用MimeUtility.encodeWord就可以很方便的搞定
+                    // 这里很重要，通过下面的Base64编码的转换可以保证你的中文附件标题名在发送时不会变成乱码
+                    //sun.misc.BASE64Encoder enc = new sun.misc.BASE64Encoder();
+                    //messageBodyPart.setFileName("=?GBK?B?" + enc.encode(attachment.getName().getBytes()) + "?=");
+                    //MimeUtility.encodeWord可以避免文件名乱码
+                    try {
+                        attachmentBodyPart.setFileName(MimeUtility.encodeWord(attachment.getName()));
+                    } catch (UnsupportedEncodingException e) {
+                        e.printStackTrace();
+                    }
+                    multipart.addBodyPart(attachmentBodyPart);
+                }
             }
         }
-
 
         return multipart;
     }
@@ -197,10 +207,8 @@ public class MailUtil {
      */
     private static MimeMessage createMimeMessage(String to, String cc, String bcc) throws MessagingException {
         MimeMessage mimeMessage = new MimeMessage(session);
-        //设置发送者
-        mimeMessage.setFrom(new InternetAddress(from));
-        //设置收件人邮箱
-        mimeMessage.setRecipients(javax.mail.Message.RecipientType.TO, to);
+        mimeMessage.setFrom(new InternetAddress(from)); //设置发送者
+        mimeMessage.setRecipients(javax.mail.Message.RecipientType.TO, to); //设置收件人邮箱
         if (null != cc && cc.length() > 0) {
             mimeMessage.setRecipients(Message.RecipientType.CC, cc);
         }
