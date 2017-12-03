@@ -59,7 +59,6 @@ public class Escape {
             0x3F, 0x3F, 0x3F, 0x3F, 0x3F, 0x3F, 0x3F, 0x3F, 0x3F, 0x3F, 0x3F,
             0x3F, 0x3F, 0x3F, 0x3F, 0x3F, 0x3F, 0x3F, 0x3F};
 
-    /** */
     /**
      * 编码
      *
@@ -94,7 +93,7 @@ public class Escape {
         return sbuf.toString();
     }
 
-    /** */
+
     /**
      * 解码 说明：本方法保证 不论参数s是否经过escape()编码，均能得到正确的“解码”结果
      *
