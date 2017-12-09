@@ -1,6 +1,4 @@
-package com.longyuzichen.core.qrcode.zxing;/**
- * Created by longyuzichen on 2016-12-22.
- */
+package com.longyuzichen.core.qrcode.zxing;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -49,7 +47,6 @@ public class ZxingCreateQrCode {
     // LOGO高度
     private static final int LOGO_HEIGHT = 60;
 
-
     /**
      * 生产矩阵
      *
@@ -72,7 +69,6 @@ public class ZxingCreateQrCode {
         return bitmatrix;
     }
 
-
     /**
      * 产生图片
      *
@@ -90,7 +86,6 @@ public class ZxingCreateQrCode {
         }
         return image;
     }
-
 
     /**
      * 写入到文件

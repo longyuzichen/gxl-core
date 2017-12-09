@@ -26,13 +26,11 @@ import java.util.*;
 public class XmlUtil {
     private static final Logger log = LoggerFactory.getLogger(XmlUtil.class);
 
-
     public static Map<String, Object> saxStream2Map(InputStream inputStream) throws Exception {
         Element element = getSaxRootElement(inputStream);
         Map<String, Object> result = saxXml2map(element);
         return result;
     }
-
 
     /**
      * xml转换为map对象
@@ -62,7 +60,6 @@ public class XmlUtil {
                 Element child = (Element) iterator.next();
                 String name = child.getName();
                 result = SaxChildValue(result, name, child);
-
             }
         }
         log.debug("xml转换Map对象结果 {}", result.toString());

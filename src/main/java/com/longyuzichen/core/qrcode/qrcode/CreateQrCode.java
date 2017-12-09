@@ -1,7 +1,4 @@
 package com.longyuzichen.core.qrcode.qrcode;
-/**
- * Created by longyuzichen on 2016-12-23.
- */
 
 import com.swetake.util.Qrcode;
 import org.slf4j.Logger;
@@ -106,7 +103,7 @@ public class CreateQrCode {
             ImageIO.write(image, imageType, file);
         } catch (IOException e) {
             log.error("qrcode 生产二维码IO异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 
@@ -124,7 +121,7 @@ public class CreateQrCode {
             ImageIO.write(image, imageType, out);
         } catch (IOException e) {
             log.error("qrcode 生产二维码IO异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         }
     }
 
@@ -176,10 +173,10 @@ public class CreateQrCode {
             image.flush();
         } catch (UnsupportedEncodingException e) {
             log.error("qrcode 生产二维码异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } catch (Exception e) {
             log.error("qrcode 生产二维码异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return image;
     }

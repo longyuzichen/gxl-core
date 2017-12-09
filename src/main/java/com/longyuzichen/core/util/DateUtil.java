@@ -1,4 +1,5 @@
-package com.longyuzichen.core.util;/**
+package com.longyuzichen.core.util;
+/**
  * Created by longyuzichen on 2017-03-12.
  */
 
@@ -11,6 +12,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 public class DateUtil {
+
     private static final Logger log = LoggerFactory.getLogger(DateUtil.class);
     private static final String DATE_PATTERN = "yyyy-MM-DD";
     private static final String TIME_PATTERN = "yyyy-MM-DD HH:MM:ss.SSS";
@@ -100,7 +102,7 @@ public class DateUtil {
             simpleDateFormat = new SimpleDateFormat(format);
             now = simpleDateFormat.parse(nowDate);
         } catch (ParseException e) {
-            e.printStackTrace();
+            log.error("字符串转换时间异常！", e);
         }
         return now;
     }

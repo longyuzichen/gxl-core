@@ -1,7 +1,4 @@
 package com.longyuzichen.core.qrcode.zxing;
-/**
- * Created by longyuzichen on 2016-12-23.
- */
 
 import com.google.zxing.*;
 import com.google.zxing.client.j2se.BufferedImageLuminanceSource;
@@ -22,7 +19,6 @@ import java.util.Hashtable;
  * @date 2016-12-23 00:19
  */
 public class ZxingResolveQrCode {
-
 
     private static final Logger log = LoggerFactory.getLogger(ZxingResolveQrCode.class);
 

@@ -1,5 +1,8 @@
 package com.longyuzichen.core.util;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -17,10 +20,9 @@ import java.io.OutputStream;
  * @date 2017-03-24 23:41
  */
 public class ImageUtil {
-   // private static final Logger log = LoggerFactory.getLogger(ImageUtil.class);
-    // 水印文字
-    // private static final  String WATERMARK = "微尘";
-    //水印字体
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(ImageUtil.class);
+
     private static final String FONT = "楷体_GB2312";
 
     /**
@@ -59,7 +61,7 @@ public class ImageUtil {
             BufferedImage image = watermarking(file, contents);
             ImageIO.write(image, imageType, outFile);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error("添加水印图片异常！", e);
         }
     }
 
@@ -76,7 +78,7 @@ public class ImageUtil {
             BufferedImage image = watermarking(file, contents);
             ImageIO.write(image, imageType, out);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error("添加水印图片异常！", e);
         }
     }
 

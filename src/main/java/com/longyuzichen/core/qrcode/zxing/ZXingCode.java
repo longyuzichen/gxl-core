@@ -1,6 +1,4 @@
-package com.longyuzichen.core.qrcode.zxing;/**
- * Created by longyuzichen on 2016-12-23.
- */
+package com.longyuzichen.core.qrcode.zxing;
 
 import com.google.zxing.BarcodeFormat;
 import com.google.zxing.EncodeHintType;
@@ -8,6 +6,8 @@ import com.google.zxing.MultiFormatWriter;
 import com.google.zxing.WriterException;
 import com.google.zxing.common.BitMatrix;
 import com.google.zxing.qrcode.decoder.ErrorCorrectionLevel;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import javax.imageio.ImageIO;
 import javax.servlet.http.HttpServletRequest;
@@ -27,24 +27,15 @@ import java.util.Map;
  */
 public class ZXingCode {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(ZXingCode.class);
     private static final int QRCOLOR = 0xFF000000;   //默认是黑色
     private static final int BGWHITE = 0xFFFFFFFF;   //背景颜色
-
-
-    public static void main(String[] args) throws WriterException {
-        try {
-            getLogoQRCode("https://www.baidu.com/", null, "跳转到百度的二维码");
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-    }
-
 
     /**
      * 生成带logo的二维码图片 * * @param qrPic * @param logoPic
      */
     public static String getLogoQRCode(String qrUrl, HttpServletRequest request, String productName) {
-// String filePath = request.getSession().getServletContext().getRealPath("/") + "resources/images/logoImages/llhlogo.png";
+        // String filePath = request.getSession().getServletContext().getRealPath("/") + "resources/images/logoImages/llhlogo.png";
         //filePath是二维码logo的路径，但是实际中我们是放在项目的某个路径下面的，所以路径用上面的，把下面的注释就好
         String filePath = "C:/Users/luoguohui/Desktop/78310a55b319ebc4fa3aef658126cffc1f17168f.jpg";  //TODO
         String content = qrUrl;
@@ -53,7 +44,7 @@ public class ZXingCode {
             BufferedImage bim = zp.getQR_CODEBufferedImage(content, BarcodeFormat.QR_CODE, 400, 400, zp.getDecodeHintType());
             return zp.addLogo_QRCode(bim, new File(filePath), new LogoConfig(), productName);
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("生产LOGO二维码图片异常！", e);
         }
         return null;
     }
@@ -80,10 +71,10 @@ public class ZXingCode {
 
             //开始绘制图片
             g.drawImage(logo, x, y, widthLogo, heightLogo, null);
-// g.drawRoundRect(x, y, widthLogo, heightLogo, 15, 15);
-// g.setStroke(new BasicStroke(logoConfig.getBorder()));
-// g.setColor(logoConfig.getBorderColor());
-// g.drawRect(x, y, widthLogo, heightLogo);
+            // g.drawRoundRect(x, y, widthLogo, heightLogo, 15, 15);
+            // g.setStroke(new BasicStroke(logoConfig.getBorder()));
+            // g.setColor(logoConfig.getBorderColor());
+            // g.drawRect(x, y, widthLogo, heightLogo);
             g.dispose();
 
             //把商品名称添加上去，商品名称不要太长哦，这里最多支持两行。太长就会自动截取啦
@@ -98,8 +89,8 @@ public class ZXingCode {
                 outg.setFont(new Font("宋体", Font.BOLD, 30)); //字体、字型、字号
                 int strWidth = outg.getFontMetrics().stringWidth(productName);
                 if (strWidth > 399) {
-// //长度过长就截取前面部分
-// outg.drawString(productName, 0, image.getHeight() + (outImage.getHeight() - image.getHeight())/2 + 5 ); //画文字
+                    // //长度过长就截取前面部分
+                    // outg.drawString(productName, 0, image.getHeight() + (outImage.getHeight() - image.getHeight())/2 + 5 ); //画文字
                     //长度过长就换行
                     String productName1 = productName.substring(0, productName.length() / 2);
                     String productName2 = productName.substring(productName.length() / 2, productName.length());
@@ -137,7 +128,7 @@ public class ZXingCode {
             baos.close();
             return imageBase64QRCode;
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("二维码添加LOGO图片异常！", e);
         }
         return null;
     }
@@ -157,9 +148,8 @@ public class ZXingCode {
                     image.setRGB(x, y, bm.get(x, y) ? 0xFF000000 : 0xFFCCDDEE);
                 }
             }
-
         } catch (Exception e) {
-            e.printStackTrace();
+            LOGGER.error("初始化二维码异常！", e);
         }
         return image;
     }
@@ -186,7 +176,7 @@ public class ZXingCode {
                 }
             }
         } catch (WriterException e) {
-            e.printStackTrace();
+            LOGGER.error("生产二维码图片异常！", e);
         }
         return image;
     }
@@ -206,6 +196,14 @@ public class ZXingCode {
         hints.put(EncodeHintType.MIN_SIZE, 100);
 
         return hints;
+    }
+
+    public static void main(String[] args) throws WriterException {
+        try {
+            getLogoQRCode("https://www.baidu.com/", null, "跳转到百度的二维码");
+        } catch (Exception e) {
+            LOGGER.error("获取二维码异常！", e);
+        }
     }
 }
 

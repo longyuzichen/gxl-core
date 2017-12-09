@@ -1,11 +1,4 @@
-package com.longyuzichen.core.util;/**
- * com.longyuzichen.core.util
- *
- * @desc
- * @author longyuzichen@126.com
- * @date 2017-03-24 22:35
- * @version V1.0
- */
+package com.longyuzichen.core.util;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,6 +14,7 @@ import java.io.*;
  * @date 2017-03-24 22:35
  */
 public class SteamUtil {
+
     private static final Logger log = LoggerFactory.getLogger(SteamUtil.class);
 
     private static final String CHARSET = "UTF-8";
@@ -47,14 +41,11 @@ public class SteamUtil {
             }
         } catch (UnsupportedEncodingException e) {
             log.error("流转化异常，流转化字符串没有指定编码！", e);
-            e.printStackTrace();
             return "";
         } catch (IOException e) {
             log.error("流转化异常，读取时IO异常！", e);
-            e.printStackTrace();
             return "";
         }
-
         return sb.toString();
     }
 

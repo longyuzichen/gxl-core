@@ -1,5 +1,8 @@
 package com.longyuzichen.core.code;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.security.MessageDigest;
 
 /**
@@ -11,6 +14,8 @@ import java.security.MessageDigest;
  * @date 2017-03-24 23:51
  */
 public class MD5 {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(MD5.class);
 
     private final static String[] hexDigits = {
             "0", "1", "2", "3", "4", "5", "6", "7",
@@ -33,12 +38,10 @@ public class MD5 {
     }
 
     private static String byteToNumString(byte b) {
-
         int _b = b;
         if (_b < 0) {
             _b = 256 + _b;
         }
-
         return String.valueOf(_b);
     }
 
@@ -60,7 +63,8 @@ public class MD5 {
             MessageDigest md = MessageDigest.getInstance("MD5");
             resultString = byteArrayToString(md.digest(resultString.getBytes()));
         } catch (Exception ex) {
-            ex.printStackTrace();
+            LOGGER.error("MD5 编码异常！", ex);
+//            ex.printStackTrace();
         }
         return resultString;
     }

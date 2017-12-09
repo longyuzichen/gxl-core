@@ -19,7 +19,6 @@ import java.net.SocketException;
 public class FtpUtil {
     private static final Logger log = LoggerFactory.getLogger(FtpUtil.class);
 
-
     private FtpUtil() {
     }
 
@@ -47,10 +46,8 @@ public class FtpUtil {
             }
         } catch (SocketException e) {
             log.error("【" + IPAddress + "】FTP服务器IP地址可能错误，请正确配置。", e);
-            e.printStackTrace();
         } catch (IOException e) {
             log.error("【" + IPAddress + "】FTP端口错误，请正确配置。", e);
-            e.printStackTrace();
         }
         return ftpClient;
     }
@@ -71,10 +68,8 @@ public class FtpUtil {
             ftpClient.retrieveFile(localFilePath, fos);
         } catch (FileNotFoundException e) {
             log.error("FTP服务器上没有【" + ftpFilePath + "】文件！", e);
-            e.printStackTrace();
         } catch (IOException e) {
             log.error("下载FTP服务器上【" + ftpFilePath + "】文件异常！", e);
-            e.printStackTrace();
             try {
                 throw new Exception("FTP客户端出错！", e);
             } catch (Exception e1) {
@@ -85,13 +80,13 @@ public class FtpUtil {
                 try {
                     fos.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    log.error("文件流异常！", e);
                 }
             }
             try {
                 FtpUtil.closeFtpConnect(ftpClient);
             } catch (Exception e) {
-                e.printStackTrace();
+                log.error("文件流异常！", e);
             }
         }
     }
@@ -117,11 +112,10 @@ public class FtpUtil {
             ftpClient.storeFile(ftpFileName, fis);
         } catch (IOException e) {
             log.error("FTP客户端连接异常！", e);
-            e.printStackTrace();
             try {
                 throw new Exception("FTP客户端连接异常！", e);
             } catch (Exception e1) {
-                e1.printStackTrace();
+                log.error("文件流异常！", e1);
             }
         } catch (Exception e) {
             log.error("FTP客户端连接异常！", e);
@@ -130,18 +124,16 @@ public class FtpUtil {
                 try {
                     fis.close();
                 } catch (IOException e) {
-                    e.printStackTrace();
+                    log.error("文件流异常！", e);
                 }
             }
             try {
                 FtpUtil.closeFtpConnect(ftpClient);
             } catch (Exception e) {
-                e.printStackTrace();
+                log.error("文件流异常！", e);
             }
         }
-
     }
-
 
     /**
      * @param ftpClient FTP客户端连接

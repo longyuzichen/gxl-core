@@ -1,10 +1,4 @@
 package com.longyuzichen.core.util;
-/**
- * Created by longyuzichen on 2016-11-13.
- */
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 import java.math.BigDecimal;
 
@@ -16,9 +10,8 @@ import java.math.BigDecimal;
  */
 public class DecimalUtil {
 
-    private static final Logger log = LoggerFactory.getLogger(DecimalUtil.class);
-
-    private DecimalUtil() {}
+    private DecimalUtil() {
+    }
 
     /**
      * @param amount
@@ -56,7 +49,6 @@ public class DecimalUtil {
         } else {
             bd = new BigDecimal("0");
         }
-        //log.info(bd.toString());
         return bd;
     }
 
@@ -66,9 +58,7 @@ public class DecimalUtil {
      * @desc 字符串转换成BigDecimal类型
      */
     public static BigDecimal getDecimal(String sum) {
-
         BigDecimal bd = new BigDecimal(sum);
-
         return bd;
     }
 

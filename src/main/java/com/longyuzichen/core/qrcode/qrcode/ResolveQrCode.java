@@ -1,7 +1,4 @@
 package com.longyuzichen.core.qrcode.qrcode;
-/**
- * Created by longyuzichen on 2016-12-23.
- */
 
 import jp.sourceforge.qrcode.QRCodeDecoder;
 import org.slf4j.Logger;
@@ -38,7 +35,7 @@ public class ResolveQrCode {
             contents = new String(qrCodeDecoder.decode(new TwoDimensionCodeImage(image)), "utf-8");
         } catch (IOException e) {
             log.error("qrcode 解析二维码IO异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return contents;
     }
@@ -58,7 +55,7 @@ public class ResolveQrCode {
             contents = new String(qrCodeDecoder.decode(new TwoDimensionCodeImage(image)), "utf-8");
         } catch (IOException e) {
             log.error("qrcode 解析二维码IO异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return contents;
     }

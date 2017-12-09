@@ -1,6 +1,5 @@
 package com.longyuzichen.core.mail;
 
-
 import com.sun.mail.util.MailSSLSocketFactory;
 
 import javax.activation.DataHandler;
@@ -23,9 +22,7 @@ import java.util.Properties;
  * @date 2017-05-07 21:58
  */
 public class MailUtil {
-//    enum MimeType {
-//        HTML_GBK, HTML_UTF8, PLAIN
-//    }
+
 
     private static final Properties props = new Properties();
     public static final String MIMETYPE = "text/html;charset=utf-8";

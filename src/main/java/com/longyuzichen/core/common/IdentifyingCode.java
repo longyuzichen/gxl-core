@@ -1,5 +1,8 @@
 package com.longyuzichen.core.common;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import javax.imageio.ImageIO;
 import java.awt.*;
 import java.awt.image.BufferedImage;
@@ -18,6 +21,7 @@ import java.util.Random;
  */
 public class IdentifyingCode {
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(IdentifyingCode.class);
 
     private static char[] codeSequence = {'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H',
             'I', 'J', 'K', 'M', 'N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
@@ -99,7 +103,8 @@ public class IdentifyingCode {
             BufferedImage image = createCode(height, widht, code, imageType);
             ImageIO.write(image, imageType, out);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error("验证码生产异常！", e);
+//            e.printStackTrace();
         }
     }
 
@@ -117,7 +122,8 @@ public class IdentifyingCode {
             BufferedImage image = createCode(height, width, code);
             ImageIO.write(image, imageType, file);
         } catch (IOException e) {
-            e.printStackTrace();
+            LOGGER.error("验证码生产异常！", e);
+//            e.printStackTrace();
         }
     }
 

@@ -1,6 +1,4 @@
-package com.longyuzichen.core.qrcode.qrcode;/**
- * Created by longyuzichen on 2016-12-23.
- */
+package com.longyuzichen.core.qrcode.qrcode;
 
 import jp.sourceforge.qrcode.data.QRCodeImage;
 
@@ -14,11 +12,11 @@ import java.awt.image.BufferedImage;
  */
 public class TwoDimensionCodeImage implements QRCodeImage {
 
-  BufferedImage image;
-    public TwoDimensionCodeImage(BufferedImage image){
+    BufferedImage image;
+
+    public TwoDimensionCodeImage(BufferedImage image) {
         this.image = image;
     }
-
 
     @Override
     public int getWidth() {
@@ -32,6 +30,6 @@ public class TwoDimensionCodeImage implements QRCodeImage {
 
     @Override
     public int getPixel(int i, int i1) {
-        return image.getRGB(i,i1);
+        return image.getRGB(i, i1);
     }
 }

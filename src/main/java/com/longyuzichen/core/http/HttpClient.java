@@ -1,9 +1,5 @@
 package com.longyuzichen.core.http;
 
-/**
- * Created by longyuzichen on 2017-03-24.
- */
-
 import com.longyuzichen.core.util.SteamUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -108,13 +104,13 @@ public class HttpClient {
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
             log.error("HTTP协议违规异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } catch (IOException e) {
             log.error("流转化异常，读取时IO异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } catch (Exception e) {
             log.error("HTTP协议请求异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } finally {
             if (is != null) {
                 is.close();
@@ -148,13 +144,13 @@ public class HttpClient {
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
             log.error("HTTP协议违规异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } catch (IOException e) {
             log.error("流转化异常，读取时IO异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } catch (Exception e) {
             log.error("HTTP协议请求异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } finally {
             if (is != null) {
                 is.close();
@@ -217,13 +213,13 @@ public class HttpClient {
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
             log.error("HTTP协议违规异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } catch (IOException e) {
             log.error("流转化IO异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } catch (Exception e) {
             log.error("HTTP协议请求异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } finally {
             if (is != null) {
                 is.close();
@@ -261,13 +257,13 @@ public class HttpClient {
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
             log.error("HTTP协议违规异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } catch (IOException e) {
             log.error("流转化IO异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } catch (Exception e) {
             log.error("HTTP协议请求异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         } finally {
             if (is != null) {
                 is.close();
@@ -297,7 +293,7 @@ public class HttpClient {
             //  con.connect();
         } catch (IOException e) {
             log.error("HTTP协议连接异常！", e);
-            e.printStackTrace();
+//            e.printStackTrace();
         }
         return con;
     }

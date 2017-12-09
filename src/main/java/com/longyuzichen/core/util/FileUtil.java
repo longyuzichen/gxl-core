@@ -23,9 +23,6 @@ public class FileUtil {
 
     private static final int BUFFER_SIZE = 1024;
 
-    //private FileUtil(){}
-
-
     public static void copy(InputStream input, OutputStream output) throws IOException {
         byte[] byteSize = new byte[BUFFER_SIZE];
         int line;
@@ -90,11 +87,11 @@ public class FileUtil {
     }
 
     /**
-     * @desc 移动文件
-     * @param from 源文件
-     * @param to 目标文件
+     * @param from      源文件
+     * @param to        目标文件
      * @param overwrite
      * @throws IOException
+     * @desc 移动文件
      */
     public static void move(File from, File to, boolean overwrite) throws IOException {
         if (to.exists()) {
@@ -129,7 +126,7 @@ public class FileUtil {
             if (!from.delete()) {
                 throw new IOException(
                         MessageFormat.format(labels.getString("deleteoriginalerror"),
-                                (Object[]) new String[]{ from.toString(),to.toString()})
+                                (Object[]) new String[]{from.toString(), to.toString()})
                 );
             }
         } finally {
@@ -170,22 +167,12 @@ public class FileUtil {
                     //创建写文件的输出流
                     OutputStream out = new FileOutputStream(file2);
                     copy(is, out);
-                   /* int len = -1;
-                    byte[] bytes = new byte[10 * 1024 * 1024];
-                    while ((len = is.read(bytes)) != -1) {
-                        out.write(bytes, 0, len);
-                        if (file2.length() > (l / num)) {
-                            break;
-                        }
-                    }*/
                     out.close();
                 }
             } catch (FileNotFoundException e) {
                 LOGGER.error("文件异常，找不到文件！", e);
-                e.printStackTrace();
             } catch (IOException e) {
                 LOGGER.error("读取文件异常！", e);
-                e.printStackTrace();
             } finally {
                 if (is != null) {
                     is.close();
@@ -216,19 +203,12 @@ public class FileUtil {
                 File file2 = new File(sb.toString());
                 out = new FileOutputStream(file2, true);
                 copy(is, out);
-               /* int len = -1;
-                byte[] bytes = new byte[10 * 1024 * 1024];
-                while ((len = is.read(bytes)) != -1) {
-                    out.write(bytes, 0, len);
-                }*/
                 out.flush();
                 out.close();
             } catch (FileNotFoundException e) {
                 LOGGER.error("文件异常，找不到文件！", e);
-                e.printStackTrace();
             } catch (IOException e) {
                 LOGGER.error("读取文件异常！", e);
-                e.printStackTrace();
             } finally {
                 if (is != null) {
                     is.close();
