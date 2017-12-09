@@ -4,7 +4,7 @@
     <groupId>com.longyuzichen</groupId>
     <artifactId>gxl-core</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
     <name>gxl-core Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>
@@ -90,6 +90,19 @@
             <groupId>dom4j</groupId>
             <artifactId>dom4j</artifactId>
             <version>1.6.1</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/javax.mail/mail -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>mail</artifactId>
+            <version>1.4.7</version>
+            <exclusions>
+                <exclusion>
+                        <groupId>javax.activation</groupId>
+                        <artifactId>activation</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
