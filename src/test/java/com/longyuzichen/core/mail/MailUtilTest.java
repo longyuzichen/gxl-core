@@ -78,8 +78,8 @@ public class MailUtilTest {
         //util = new MailUtil("smtp.163.com","xxx@163.com","xxx@163.com","");
         // util = new MailUtil("smtp.163.com","xxx@163.com","xxx@163.com","",25);
 
-        util = new MailUtil("smtp.163.com","xxx@163.com","xxx@163.com","","smtp",25,true,true);
-
+//        util = new MailUtil("smtp.163.com","xxx@163.com","xxx@163.com","","smtp",25,true,true);
+        util = new MailUtil("smtp.163.com", "longyuzichen@163.com", "longyuzichen@163.com", "longyuzichen6648", true);
 
     }
 
