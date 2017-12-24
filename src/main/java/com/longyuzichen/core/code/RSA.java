@@ -1,3 +1,18 @@
+/**
+ * Copyright [2017] guoxinlei(longyuzichen@126.com)
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ **/
 package com.longyuzichen.core.code;
 
 import org.apache.commons.codec.binary.Hex;
@@ -44,16 +59,12 @@ public class RSA {
             result = Hex.encodeHexString(sign);
         } catch (NoSuchAlgorithmException e) {
             log.error("RSA签名异常！", e);
-//            e.printStackTrace();
         } catch (InvalidKeySpecException e) {
             log.error("RSA签名初始化异常！", e);
-//            e.printStackTrace();
         } catch (SignatureException e) {
             log.error("RSA签名异常！", e);
-//            e.printStackTrace();
         } catch (InvalidKeyException e) {
             log.error("RSA签名异常！", e);
-//            e.printStackTrace();
         }
         return result;
     }
@@ -75,20 +86,15 @@ public class RSA {
             Signature signature = Signature.getInstance("MD5WithRSA");
             signature.initVerify(publicKey);
             signature.update(contents.getBytes());
-            //signature.verify(sign);
             result = signature.verify(sign);
         } catch (NoSuchAlgorithmException e) {
             log.error("RSA校验异常！", e);
-//            e.printStackTrace();
         } catch (InvalidKeySpecException e) {
             log.error("RSA校验初始化异常！", e);
-//            e.printStackTrace();
         } catch (InvalidKeyException e) {
             log.error("RSA校验异常！", e);
-//            e.printStackTrace();
         } catch (SignatureException e) {
             log.error("RSA校验异常！", e);
-//            e.printStackTrace();
         }
         return result;
     }
@@ -129,7 +135,6 @@ public class RSA {
             keyPair = keyPairGenerator.genKeyPair();
         } catch (NoSuchAlgorithmException e) {
             log.error("RSA初始化密钥异常！", e);
-//            e.printStackTrace();
             return null;
         }
         return keyPair;

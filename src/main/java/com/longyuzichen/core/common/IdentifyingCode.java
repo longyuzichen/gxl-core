@@ -1,3 +1,18 @@
+/**
+ * Copyright [2017] guoxinlei(longyuzichen@126.com)
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ **/
 package com.longyuzichen.core.common;
 
 import org.slf4j.Logger;
@@ -104,7 +119,6 @@ public class IdentifyingCode {
             ImageIO.write(image, imageType, out);
         } catch (IOException e) {
             LOGGER.error("验证码生产异常！", e);
-//            e.printStackTrace();
         }
     }
 
@@ -123,7 +137,6 @@ public class IdentifyingCode {
             ImageIO.write(image, imageType, file);
         } catch (IOException e) {
             LOGGER.error("验证码生产异常！", e);
-//            e.printStackTrace();
         }
     }
 
@@ -188,26 +201,15 @@ public class IdentifyingCode {
             graphics2D.setColor(color);
             graphics2D.drawLine(x0, y0, x1, y1);
         }
-        //StringBuffer stringBuffer = new StringBuffer();
         for (int i = 0; i < code.length(); i++) {
             String rand = String.valueOf(code.charAt(i));
 
             //设置字体颜色
             graphics2D.setColor(getRandomColor());
             graphics2D.drawString(rand, (i + 1) * x, getRandomNumber(height / 2) + 25);
-            // stringBuffer.append(rand);
         }
         return image;
     }
-
- /*   public static List<String> getRandomCode(int count) {
-        List<String> list = new ArrayList<String>();
-        for (int i = 0; i < count; i++) {
-            String rand = String.valueOf(codeSequence[new Random().nextInt(codeSequence.length)]);
-            list.add(rand);
-        }
-        return list;
-    }*/
 
     /**
      * 获取随机数

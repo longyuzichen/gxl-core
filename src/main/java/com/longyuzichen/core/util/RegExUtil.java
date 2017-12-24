@@ -1,3 +1,18 @@
+/**
+ * Copyright [2017] guoxinlei(longyuzichen@126.com)
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ **/
 package com.longyuzichen.core.util;
 
 import java.util.Vector;
@@ -149,8 +164,6 @@ public class RegExUtil {
      * 转义正则表达式字符(之所以需要将\和$字符用escapeDollarBackslash方法的方式是因为用repalceAll是不行的，简单的试试"$".repalceAll("\\$","\\\\$")你会发现这个调用会导致数组越界错误)
      *
      * @param original 正则表达式模式
-     * @param str      原始字串
-     * @return array
      * @since 1.0
      */
     public static String escapeDollarBackslash(String original) {

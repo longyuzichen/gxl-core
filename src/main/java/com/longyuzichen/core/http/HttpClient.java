@@ -1,3 +1,18 @@
+/**
+ * Copyright [2017] guoxinlei(longyuzichen@126.com)
+ * <p>
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ * <p>
+ * http://www.apache.org/licenses/LICENSE-2.0
+ * <p>
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ **/
 package com.longyuzichen.core.http;
 
 import com.longyuzichen.core.util.SteamUtil;
@@ -104,13 +119,10 @@ public class HttpClient {
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
             log.error("HTTP协议违规异常！", e);
-//            e.printStackTrace();
         } catch (IOException e) {
             log.error("流转化异常，读取时IO异常！", e);
-//            e.printStackTrace();
         } catch (Exception e) {
             log.error("HTTP协议请求异常！", e);
-//            e.printStackTrace();
         } finally {
             if (is != null) {
                 is.close();
@@ -144,13 +156,10 @@ public class HttpClient {
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
             log.error("HTTP协议违规异常！", e);
-//            e.printStackTrace();
         } catch (IOException e) {
             log.error("流转化异常，读取时IO异常！", e);
-//            e.printStackTrace();
         } catch (Exception e) {
             log.error("HTTP协议请求异常！", e);
-//            e.printStackTrace();
         } finally {
             if (is != null) {
                 is.close();
@@ -201,7 +210,6 @@ public class HttpClient {
         InputStream is = null;
         HttpURLConnection connection = null;
         try {
-            // url = url+toString(params);
             connection = connection(url);
             connection.setDoOutput(true);
             connection.setRequestMethod("POST");
@@ -213,13 +221,10 @@ public class HttpClient {
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
             log.error("HTTP协议违规异常！", e);
-//            e.printStackTrace();
         } catch (IOException e) {
             log.error("流转化IO异常！", e);
-//            e.printStackTrace();
         } catch (Exception e) {
             log.error("HTTP协议请求异常！", e);
-//            e.printStackTrace();
         } finally {
             if (is != null) {
                 is.close();
@@ -245,25 +250,20 @@ public class HttpClient {
         InputStream is = null;
         HttpURLConnection connection = null;
         try {
-            // url = url+toString(params);
             connection = connection(url);
             connection.setDoOutput(true);
             connection.setRequestMethod("POST");
             connection.connect();
             DataOutputStream dos = new DataOutputStream(connection.getOutputStream());
             dos.write(params.getBytes("utf-8"));
-            // dos.writeBytes(params.getBytes("utf-8"));
             is = connection.getInputStream();
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
             log.error("HTTP协议违规异常！", e);
-//            e.printStackTrace();
         } catch (IOException e) {
             log.error("流转化IO异常！", e);
-//            e.printStackTrace();
         } catch (Exception e) {
             log.error("HTTP协议请求异常！", e);
-//            e.printStackTrace();
         } finally {
             if (is != null) {
                 is.close();
@@ -289,11 +289,8 @@ public class HttpClient {
             con.setRequestProperty("User-Agent", USER_AGENT);
             con.setUseCaches(false);
             con.setInstanceFollowRedirects(false);
-            //con.setConnectTimeout(); //不设置超时时间
-            //  con.connect();
         } catch (IOException e) {
             log.error("HTTP协议连接异常！", e);
-//            e.printStackTrace();
         }
         return con;
     }

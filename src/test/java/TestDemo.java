@@ -9,7 +9,7 @@ import java.util.Map;
  * @desc
  * @date 2017-03-26 10:57
  */
-public class TestDemo  extends Test{
+public class TestDemo extends Test {
 
     @Override
     public int testName1() {
@@ -18,7 +18,8 @@ public class TestDemo  extends Test{
         System.out.println("我是Test-testName1实现体");
         return 0;
     }
-    class Test2Demo1 extends Test.Test3{
+
+    class Test2Demo1 extends Test.Test3 {
         @Override
         public int test2Name3() {
             test2Name2();
@@ -27,15 +28,12 @@ public class TestDemo  extends Test{
         }
     }
 
-    public static void main(String[] args){
-        /*Test test = new TestDemo();
-        test.testName1();*/
-
+    public static void main(String[] args) {
         Map map = new HashMap();
-        map.put("li",9);
-      Object im =   map.replace("dd",8);
+        map.put("li", 9);
+        Object im = map.replace("dd", 8);
 
-      System.out.println(im);
-      System.out.print("我是的人的");
+        System.out.println(im);
+        System.out.print("我是的人的");
     }
 }
