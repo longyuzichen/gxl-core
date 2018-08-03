@@ -45,6 +45,8 @@ public class HttpClient {
 
     private static final String USER_AGENT = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/55.0.2883.75 Safari/537.36";
 
+    private static final int CONNECT_TIME_OUT = 5000;
+    private static final int READ_TIME_OUT = 5000;
 
     /**
      * httpClient请求方法
@@ -52,22 +54,15 @@ public class HttpClient {
      * @param url
      * @param method
      * @param params
-     * @param charset
      * @return
      * @throws Exception
      */
-    public static String HttpClient(String url, String method, Map<String, Object> params, String charset) throws Exception {
-
+    public static String HttpClient(String url, String method, Map<String, Object> params) throws IOException  {
         String result = "";
-        if (charset == null || charset.length() == 0) {
-            charset = CHARSET;
-        }
-        if ("POST".equals(method.toUpperCase())) {
-            result = post(url, params, charset);
-        } else if ("GET".equals(method.toUpperCase())) {
-            result = get(url, params, charset);
+         if ("GET".equals(method.toUpperCase())) {
+            result = get(url, params);
         } else {
-            throw new Exception("HTTP协议请求方法错误！");
+            result = post(url, params);
         }
         return result;
     }
@@ -80,8 +75,8 @@ public class HttpClient {
      * @return
      * @throws Exception
      */
-    public static String get(String url, String params) throws Exception {
-        String result = get(url, params, "utf-8");
+    public static String get(String url, String params) throws IOException {
+        String result = get(url, params, CHARSET);
         return result;
     }
 
@@ -93,8 +88,8 @@ public class HttpClient {
      * @return
      * @throws Exception
      */
-    public static String get(String url, Map<String, Object> params) throws Exception {
-        String result = get(url, params, "utf-8");
+    public static String get(String url, Map<String, Object> params) throws IOException {
+        String result = get(url, params, CHARSET);
         return result;
     }
 
@@ -106,7 +101,7 @@ public class HttpClient {
      * @param charset
      * @return
      */
-    public static String get(String url, String params, String charset) throws Exception {
+    public static String get(String url, String params, String charset) throws IOException {
         String result = "";
         InputStream is = null;
         HttpURLConnection connection = null;
@@ -143,7 +138,7 @@ public class HttpClient {
      * @param charset
      * @return
      */
-    public static String get(String url, Map<String, Object> params, String charset) throws Exception {
+    public static String get(String url, Map<String, Object> params, String charset) throws IOException {
         String result = "";
         InputStream is = null;
         HttpURLConnection connection = null;
@@ -180,7 +175,7 @@ public class HttpClient {
      * @throws Exception
      */
     public static String post(String url, String params) throws Exception {
-        String result = post(url, params, "utf-8");
+        String result = post(url, params, CHARSET);
         return result;
     }
 
@@ -192,8 +187,8 @@ public class HttpClient {
      * @return
      * @throws Exception
      */
-    public static String post(String url, Map<String, Object> params) throws Exception {
-        String result = post(url, params, "utf-8");
+    public static String post(String url, Map<String, Object> params) throws IOException {
+        String result = post(url, params, CHARSET);
         return result;
     }
 
@@ -205,7 +200,7 @@ public class HttpClient {
      * @param charset
      * @return
      */
-    public static String post(String url, Map<String, Object> params, String charset) throws Exception {
+    public static String post(String url, Map<String, Object> params, String charset) throws IOException {
         String result = "";
         InputStream is = null;
         HttpURLConnection connection = null;
@@ -255,7 +250,7 @@ public class HttpClient {
             connection.setRequestMethod("POST");
             connection.connect();
             DataOutputStream dos = new DataOutputStream(connection.getOutputStream());
-            dos.write(params.getBytes("utf-8"));
+            dos.write(params.getBytes(charset));
             is = connection.getInputStream();
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
@@ -289,6 +284,8 @@ public class HttpClient {
             con.setRequestProperty("User-Agent", USER_AGENT);
             con.setUseCaches(false);
             con.setInstanceFollowRedirects(false);
+            con.setConnectTimeout(CONNECT_TIME_OUT);
+            con.setReadTimeout(READ_TIME_OUT);
         } catch (IOException e) {
             log.error("HTTP协议连接异常！", e);
         }
