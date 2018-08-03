@@ -23,7 +23,6 @@ public class MailUtilTest {
     @Test
     public void sendText() throws Exception {
         util.sendText("longyuzichen@126.com", "tre65", text);
-
     }
 
     @Test
@@ -41,9 +40,7 @@ public class MailUtilTest {
     @Test
     public void sendText3() throws Exception {
         util.sendText("longyuzichen@126.com", "请求信息", text + 3, new String[]{"f:\\Koala.jpg"}, "text/plan;charset=utf-8");
-
     }
-
 
     @Test
     public void sendHtml() throws Exception {
@@ -70,18 +67,10 @@ public class MailUtilTest {
         util.sendHtml("longyuzichen@126.com", null, "", "wo xiang qusi le ", html, "memememe","" , new String[]{"f:\\Koala.jpg"});
     }
 
-
     MailUtil util = null;
 
     @Before
     public void before() throws Exception {
-        //util = new MailUtil("smtp.163.com","xxx@163.com","xxx@163.com","");
-        // util = new MailUtil("smtp.163.com","xxx@163.com","xxx@163.com","",25);
-
-//        util = new MailUtil("smtp.163.com","xxx@163.com","xxx@163.com","","smtp",25,true,true);
-        util = new MailUtil("smtp.163.com", "longyuzichen@163.com", "longyuzichen@163.com", "longyuzichen6648", true);
-
     }
-
 
 }

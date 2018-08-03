@@ -16,6 +16,9 @@
 package com.longyuzichen.core.util;
 
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Map;
@@ -29,14 +32,14 @@ import java.util.Properties;
  * @desc Properties 文件帮助类
  * @date 2017-03-24 23:36
  */
-public class Propertie {
+public class PropertieUtils {
 
     // 默认配置文件路径
     private static final String PATH = "/WEB-INF/classes/";
 
     private static final Properties prop = new Properties();
 
-    private Propertie() {
+    private PropertieUtils() {
 
     }
 
@@ -47,9 +50,13 @@ public class Propertie {
      * @auto longyuzichen@126.com
      * @date 2016年12月16日 下午1:20:03
      */
-    public static void loadProperties(String filename) throws Exception {
+    public static void loadProperties(String filename) throws IOException {
         FileInputStream fis = new FileInputStream(PATH + filename);
         prop.load(fis);
+    }
+
+    public static void loadProperties(InputStream is) throws IOException {
+        prop.load(is);
     }
 
     /**
@@ -59,8 +66,13 @@ public class Propertie {
      * @auto longyuzichen@126.com
      * @date 2016年12月16日 下午1:20:35
      */
-    public static String getPropertiesValue(String key) {
+    public static String getProperty(String key) {
         return prop.getProperty(key);
+    }
+
+    public static String getProperty(String key, String defaultValue) {
+        String val = prop.getProperty(key);
+        return null == val ? defaultValue : val;
     }
 
     /**
