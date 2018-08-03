@@ -61,24 +61,21 @@ public class HttpsClient {
     public static String post(String requestUrl, String outputStr, String certPath, String certPassword) throws Exception {
         KeyStore keyStore = KeyStore.getInstance("PKCS12");
         StringBuilder res = new StringBuilder("");
-        FileInputStream instream = new FileInputStream(new File(certPath)); // 证书路径
 
-        try {
-            keyStore.load(instream, certPassword.toCharArray()); //证书密码
-        } finally {
-            instream.close();
+        char[] passwordChar = certPassword.toCharArray();
+        try (FileInputStream instream = new FileInputStream(new File(certPath))) { // 证书路径
+            keyStore.load(instream, passwordChar); //证书密码
         }
 
         // Trust own CA and all self-signed certs
         SSLContext sslcontext = SSLContexts.custom()
-                .loadKeyMaterial(keyStore, certPassword.toCharArray()) // 证书密码
+                .loadKeyMaterial(keyStore, passwordChar) // 证书密码
                 .build();
         // Allow TLSv1 protocol only
         SSLConnectionSocketFactory sslsf = new SSLConnectionSocketFactory(sslcontext, new String[]{"TLSv1"}, null,
                 SSLConnectionSocketFactory.BROWSER_COMPATIBLE_HOSTNAME_VERIFIER);
-        CloseableHttpClient httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build();
-        try {
 
+        try (CloseableHttpClient httpclient = HttpClients.custom().setSSLSocketFactory(sslsf).build()) {
             HttpPost httpost = new HttpPost(requestUrl);
             httpost.addHeader("Connection", "keep-alive");
             httpost.addHeader("Accept", "*/*");
@@ -87,39 +84,35 @@ public class HttpsClient {
             httpost.addHeader("X-Requested-With", "XMLHttpRequest");
             httpost.addHeader("Cache-Control", "max-age=0");
             httpost.addHeader("User-Agent", "Mozilla/4.0 (compatible; MSIE 8.0; Windows NT 6.0) ");
+
             StringEntity entity2 = new StringEntity(outputStr, Consts.UTF_8);
             httpost.setEntity(entity2);
 
-            if(log.isDebugEnabled()){
+            if (log.isDebugEnabled()) {
                 log.debug("executing request:" + httpost.getRequestLine());
             }
-            CloseableHttpResponse response = httpclient.execute(httpost);
 
-            try {
+            try (CloseableHttpResponse response = httpclient.execute(httpost)) {
                 HttpEntity entity = response.getEntity();
-                if(log.isDebugEnabled()) {
+                if (log.isDebugEnabled()) {
                     log.debug("response execute:" + response.getStatusLine());
                 }
                 if (entity != null) {
-                    if(log.isDebugEnabled()) {
+                    if (log.isDebugEnabled()) {
                         log.debug("Response content length: " + entity.getContentLength());
                     }
-                    BufferedReader bufferedReader = new BufferedReader(
-                            new InputStreamReader(entity.getContent(), "utf-8"));
+                    InputStreamReader reader = new InputStreamReader(entity.getContent(), "utf-8");
+                    BufferedReader bufferedReader = new BufferedReader(reader);
                     String text = null;
                     while ((text = bufferedReader.readLine()) != null) {
                         res.append(text);
-                        if(log.isDebugEnabled()) {
-                            log.debug("POST 请求返回的数据：" + text);
-                        }
+                    }
+                    if (log.isDebugEnabled()) {
+                        log.debug("POST 请求返回的数据：" + res.toString());
                     }
                 }
                 EntityUtils.consume(entity);
-            } finally {
-                response.close();
             }
-        } finally {
-            httpclient.close();
         }
         return res.toString();
     }
