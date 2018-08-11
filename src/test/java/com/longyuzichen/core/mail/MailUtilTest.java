@@ -44,7 +44,7 @@ public class MailUtilTest {
 
     @Test
     public void sendHtml() throws Exception {
-        util.sendHtml("longyuzichen@126.com", "r", html_1);
+        util.sendHtml("longyuzichen@163.com", "r", html_1);
     }
 
     @Test
@@ -64,7 +64,7 @@ public class MailUtilTest {
 
     @Test
     public void sendHtml4() throws Exception {
-        util.sendHtml("longyuzichen@126.com", null, "", "wo xiang qusi le ", html, "memememe","" , new String[]{"f:\\Koala.jpg"});
+        util.sendHtml("longyuzichen@163.com", null, "", "wo xiang qusi le ", html, "memememe","" , new String[]{"f:\\Koala.jpg"});
     }
 
     MailUtil util = null;
