@@ -15,7 +15,9 @@
  **/
 package com.longyuzichen.core.http;
 
+import com.longyuzichen.core.exception.LongyuzichenException;
 import com.longyuzichen.core.util.SteamUtil;
+import com.longyuzichen.core.util.StringUtil;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -37,7 +39,7 @@ import java.util.Map;
  * @desc HTTP协议客户端
  * @date ${DATE} ${TIME}
  */
-public class HttpClient {
+public final class HttpClient {
 
     private static final Logger log = LoggerFactory.getLogger(HttpClient.class);
 
@@ -57,9 +59,9 @@ public class HttpClient {
      * @return
      * @throws Exception
      */
-    public static String HttpClient(String url, String method, Map<String, Object> params) throws IOException  {
+    public static String HttpClient(String url, String method, Map<String, Object> params) throws Exception {
         String result = "";
-         if ("GET".equals(method.toUpperCase())) {
+        if ("GET".equals(method.toUpperCase())) {
             result = get(url, params);
         } else {
             result = post(url, params);
@@ -88,7 +90,7 @@ public class HttpClient {
      * @return
      * @throws Exception
      */
-    public static String get(String url, Map<String, Object> params) throws IOException {
+    public static String get(String url, Map<String, Object> params) throws Exception {
         String result = get(url, params, CHARSET);
         return result;
     }
@@ -138,12 +140,12 @@ public class HttpClient {
      * @param charset
      * @return
      */
-    public static String get(String url, Map<String, Object> params, String charset) throws IOException {
+    public static String get(String url, Map<String, Object> params, String charset) throws Exception {
         String result = "";
         InputStream is = null;
         HttpURLConnection connection = null;
         try {
-            url = url + toString(params);
+            url = url + StringUtil.map2String(params);
             connection = connection(url);
             connection.setRequestMethod("GET");
             connection.connect();
@@ -151,10 +153,10 @@ public class HttpClient {
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
             log.error("HTTP协议违规异常！", e);
+            throw new ProtocolException("HTTP协议违规异常");
         } catch (IOException e) {
             log.error("流转化异常，读取时IO异常！", e);
-        } catch (Exception e) {
-            log.error("HTTP协议请求异常！", e);
+            throw new IOException("IO异常");
         } finally {
             if (is != null) {
                 is.close();
@@ -187,7 +189,7 @@ public class HttpClient {
      * @return
      * @throws Exception
      */
-    public static String post(String url, Map<String, Object> params) throws IOException {
+    public static String post(String url, Map<String, Object> params) throws Exception {
         String result = post(url, params, CHARSET);
         return result;
     }
@@ -200,7 +202,7 @@ public class HttpClient {
      * @param charset
      * @return
      */
-    public static String post(String url, Map<String, Object> params, String charset) throws IOException {
+    public static String post(String url, Map<String, Object> params, String charset) throws Exception {
         String result = "";
         InputStream is = null;
         HttpURLConnection connection = null;
@@ -211,15 +213,15 @@ public class HttpClient {
             connection.connect();
             DataOutputStream dos = new DataOutputStream(connection.getOutputStream());
 
-            dos.writeBytes(toString(params));
+            dos.writeBytes(StringUtil.map2String(params));
             is = connection.getInputStream();
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
             log.error("HTTP协议违规异常！", e);
+            throw new ProtocolException("HTTP协议违规异常");
         } catch (IOException e) {
-            log.error("流转化IO异常！", e);
-        } catch (Exception e) {
-            log.error("HTTP协议请求异常！", e);
+            log.error("流转化异常，读取时IO异常！", e);
+            throw new IOException("IO异常");
         } finally {
             if (is != null) {
                 is.close();
@@ -255,10 +257,10 @@ public class HttpClient {
             result = SteamUtil.stream2String(is, charset);
         } catch (ProtocolException e) {
             log.error("HTTP协议违规异常！", e);
+            throw new ProtocolException("HTTP协议违规异常");
         } catch (IOException e) {
             log.error("流转化IO异常！", e);
-        } catch (Exception e) {
-            log.error("HTTP协议请求异常！", e);
+            throw new IOException("IO异常");
         } finally {
             if (is != null) {
                 is.close();
@@ -276,46 +278,15 @@ public class HttpClient {
      * @param connectionUrl
      * @return
      */
-    private static HttpURLConnection connection(String connectionUrl) {
-        HttpURLConnection con = null;
-        try {
-            URL url = new URL(connectionUrl);
-            con = (HttpURLConnection) url.openConnection();
-            con.setRequestProperty("User-Agent", USER_AGENT);
-            con.setUseCaches(false);
-            con.setInstanceFollowRedirects(false);
-            con.setConnectTimeout(CONNECT_TIME_OUT);
-            con.setReadTimeout(READ_TIME_OUT);
-        } catch (IOException e) {
-            log.error("HTTP协议连接异常！", e);
-        }
+    private static HttpURLConnection connection(String connectionUrl) throws IOException {
+        URL url = new URL(connectionUrl);
+        HttpURLConnection con = (HttpURLConnection) url.openConnection();
+        con.setRequestProperty("User-Agent", USER_AGENT);
+        con.setUseCaches(false);
+        con.setInstanceFollowRedirects(false);
+        con.setConnectTimeout(CONNECT_TIME_OUT);
+        con.setReadTimeout(READ_TIME_OUT);
         return con;
     }
 
-    /**
-     * map集合转化为字符串（字符串以 & 连接）
-     *
-     * @param params Map集合对象
-     * @return
-     */
-    public static String toString(Map<String, Object> params) {
-        StringBuilder sb = new StringBuilder();
-        if (null == params || params.isEmpty()) {
-            return "";
-        }
-        List<String> list = new ArrayList<String>(params.keySet());
-        if (list.size() == 0) {
-            return "";
-        }
-        for (int i = 0; i < list.size(); i++) {
-            String k = list.get(i);
-            Object v = params.get(k);
-            if (i == list.size()) {
-                sb.append(k).append("=").append(v);
-            } else {
-                sb.append(k).append("=").append(v).append("&");
-            }
-        }
-        return sb.toString();
-    }
 }

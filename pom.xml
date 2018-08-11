@@ -4,7 +4,7 @@
     <groupId>com.longyuzichen</groupId>
     <artifactId>gxl-core</artifactId>
     <packaging>jar</packaging>
-    <version>1.0.2</version>
+    <version>1.0.3</version>
     <name>gxl-core Maven Webapp</name>
     <url>http://maven.apache.org</url>
     <dependencies>

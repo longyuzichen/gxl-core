@@ -2,12 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="45e336ce-41a9-4b9b-8f11-957673f56fc3" name="Default" comment="修改HTTP协议请求代码，抛出IO异常，简化输入参数，添加链接与读取超时时间">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/common/Constants.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/exception/LongyuzichenException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resouces/longyuzichen.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/mail/MailUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/mail/MailUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/Propertie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/PropertieUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/longyuzichen/core/mail/MailUtilTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/longyuzichen/core/mail/MailUtilTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/http/HttpClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/http/HttpClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/StringUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/StringUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/longyuzichen/core/mail/MailUtilTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/longyuzichen/core/mail/MailUtilTest.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -31,53 +30,60 @@
     <session id="-822205807">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.220" value="1" />
           <entry key="project.open.time.3" value="1" />
-          <entry key="project.opened" value="1" />
+          <entry key="project.opened" value="2" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="java" value="23" />
+          <entry key="java" value="32" />
           <entry key="properties" value="1" />
           <entry key="txt" value="1" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="JAVA" value="23" />
+          <entry key="JAVA" value="32" />
           <entry key="PLAIN_TEXT" value="1" />
           <entry key="Properties" value="1" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="5" />
-          <entry key="java" value="1461" />
-          <entry key="properties" value="90" />
-          <entry key="txt" value="81" />
+          <entry key="java" value="1560" />
+          <entry key="properties" value="106" />
+          <entry key="txt" value="100" />
+          <entry key="xml" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1461" />
-          <entry key="PLAIN_TEXT" value="86" />
-          <entry key="Properties" value="90" />
+          <entry key="JAVA" value="1560" />
+          <entry key="PLAIN_TEXT" value="105" />
+          <entry key="Properties" value="106" />
+          <entry key="XML" value="1" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.spring.boot.run.usages" />
       <usages-collector id="statistics.spring.boot.mvc.usages" />
+      <usages-collector id="statistics.js.language.service.starts" />
     </session>
   </component>
   <component name="FavoritesManager">
     <favorites_list name="gxlcore" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/http/HttpClient.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="422">
-              <caret line="321" lean-forward="true" selection-start-line="321" selection-end-line="321" />
+            <state relative-caret-position="3">
+              <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -85,46 +91,63 @@
           </provider>
         </entry>
       </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/StringUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="462">
+              <caret line="97" column="9" lean-forward="true" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://F:/Environment/Java/JDK/JDK8/src.zip!/java/util/HashMap.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="219">
+              <caret line="533" column="19" selection-start-line="533" selection-start-column="15" selection-end-line="533" selection-end-column="19" />
+              <folding>
+                <element signature="e#21303#21304#0" expanded="true" />
+                <element signature="e#21335#21336#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar://F:/Environment/Java/JDK/JDK8/src.zip!/java/util/Map.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="145" column="12" selection-start-line="145" selection-start-column="12" selection-end-line="145" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/http/HttpsClient.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="21">
+              <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/mail/MailUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="94">
-              <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
+            <state relative-caret-position="21">
+              <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="136" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4320#4321#0" expanded="true" />
-                <element signature="e#4357#4358#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/PropertieUtils.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="52">
-              <caret line="69" selection-start-line="69" selection-end-line="69" />
-              <folding>
-                <element signature="e#1808#1809#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/resouces/longyuzichen.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="8" column="29" lean-forward="true" selection-start-line="8" selection-start-column="29" selection-end-line="8" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/test/java/com/longyuzichen/core/mail/MailUtilTest.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="343">
-              <caret line="77" selection-start-line="77" selection-end-line="77" />
             </state>
           </provider>
         </entry>
@@ -183,7 +206,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/mail/MailAuthenticator.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/longyuzichen/core/code/RSATest.java" />
         <option value="$PROJECT_DIR$/src/test/java/com/longyuzichen/core/MailUtil.java" />
-        <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/code/Base64.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/code/Escape.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/common/Assert.java" />
@@ -200,7 +222,6 @@
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/Objects.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/Propertie.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/SteamUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/StringUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/XmlUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/web/LongYuZiChenListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/RegExUtil.java" />
@@ -214,20 +235,23 @@
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/qrcode/qrcode/ResolveQrCode.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/web/CrossDomainFilter.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/http/HttpsClient.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/http/HttpClient.java" />
         <option value="$PROJECT_DIR$/src/main/resources/longyuzichen.properties" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/exception/LongyuzichenException.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/common/Constants.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/PropertieUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/mail/MailUtil.java" />
-        <option value="$PROJECT_DIR$/src/test/resouces/longyuzichen.properties" />
         <option value="$PROJECT_DIR$/src/test/java/com/longyuzichen/core/mail/MailUtilTest.java" />
+        <option value="$PROJECT_DIR$/src/test/resouces/longyuzichen.properties" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/StringUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/longyuzichen/core/http/HttpClient.java" />
+        <option value="$PROJECT_DIR$/pom.xml" />
       </list>
     </option>
   </component>
   <component name="JavaAutoRunManager">
     <enabled-run-configurations>
       <run-configuration type="JUnit" name="Rerun Failed Tests" />
+      <run-configuration type="JUnit" name="MailUtilTest" />
     </enabled-run-configurations>
   </component>
   <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
@@ -531,7 +555,7 @@
         <observation name="typedSelect" value="77.0" />
       </dailyData>
       <dailyData date="4-8-2018">
-        <observation name="cancelled" value="34.0" />
+        <observation name="cancelled" value="36.0" />
         <observation name="explicitSelect" value="11.0" />
         <observation name="typedSelect" value="17.0" />
       </dailyData>
@@ -549,7 +573,7 @@
         <observation name="count" value="556.0" />
       </dailyData>
       <dailyData date="4-8-2018">
-        <observation name="count" value="62.0" />
+        <observation name="count" value="64.0" />
       </dailyData>
     </factor>
     <factor id="doubleFeature:explicitProximity">
@@ -933,116 +957,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope">
-        <subPane subId="Project Files">
-          <expand>
-            <path>
-              <item name="Root" type="cbb8eebc:String" user="Root" />
-              <item name="gxlcore" type="cbb8eebc:String" user="gxlcore" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-              <item name="resources" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="java" type="462c0819:PsiDirectoryNode" />
-              <item name="core" type="462c0819:PsiDirectoryNode" />
-              <item name="mail" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="test" type="462c0819:PsiDirectoryNode" />
-              <item name="resouces" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
-              <item name="target" type="462c0819:PsiDirectoryNode" />
-              <item name="test-classes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: commons-lang:commons-lang:2.6" type="70bed36:NamedLibraryElementNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: commons-lang:commons-lang:2.6" type="70bed36:NamedLibraryElementNode" />
-              <item name="commons-lang-2.6.jar" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-              <item name="Maven: commons-lang:commons-lang:2.6" type="70bed36:NamedLibraryElementNode" />
-              <item name="commons-lang-2.6.jar" type="462c0819:PsiDirectoryNode" />
-              <item name="lang" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -1090,12 +1004,34 @@
         </subPane>
       </pane>
       <pane id="AndroidView" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="gxlcore" type="b2602c69:ProjectViewProjectNode" />
+              <item name="gxlcore" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="Scope">
+        <subPane subId="Project Files">
+          <expand>
+            <path>
+              <item name="Root" type="cbb8eebc:String" user="Root" />
+              <item name="gxlcore" type="cbb8eebc:String" user="gxlcore" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1533313173763" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1534004426549" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit4" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -1142,7 +1078,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="JUnit.MailUtilTest.sendText">
+  <component name="RunManager" selected="JUnit.MailUtilTest.sendHtml">
     <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
       <module name="" />
       <option name="TESTING_TYPE" value="0" />
@@ -1305,7 +1241,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="MailUtilTest.sendHtml2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="MailUtilTest.sendHtml" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="gxlcore" />
       <extension name="coverage">
         <pattern>
@@ -1315,7 +1251,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="com.longyuzichen.core.mail" />
       <option name="MAIN_CLASS_NAME" value="com.longyuzichen.core.mail.MailUtilTest" />
-      <option name="METHOD_NAME" value="sendHtml2" />
+      <option name="METHOD_NAME" value="sendHtml" />
       <option name="TEST_OBJECT" value="method" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
       <method v="2">
@@ -1440,19 +1376,19 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="JUnit.MailUtilTest.sendHtml2" />
       <item itemvalue="JUnit.MailUtilTest.sendHtml3" />
       <item itemvalue="JUnit.MailUtilTest.sendHtml4" />
       <item itemvalue="JUnit.MailUtilTest" />
       <item itemvalue="JUnit.MailUtilTest.sendText" />
+      <item itemvalue="JUnit.MailUtilTest.sendHtml" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.MailUtilTest.sendText" />
+        <item itemvalue="JUnit.MailUtilTest.sendHtml" />
         <item itemvalue="JUnit.MailUtilTest" />
+        <item itemvalue="JUnit.MailUtilTest.sendText" />
         <item itemvalue="JUnit.MailUtilTest.sendHtml4" />
         <item itemvalue="JUnit.MailUtilTest.sendHtml3" />
-        <item itemvalue="JUnit.MailUtilTest.sendHtml2" />
       </list>
     </recent_temporary>
   </component>
@@ -1488,7 +1424,8 @@
       <workItem from="1512283749282" duration="13069000" />
       <workItem from="1516888883370" duration="1826000" />
       <workItem from="1517663690343" duration="1413000" />
-      <workItem from="1532739707977" duration="9128000" />
+      <workItem from="1532739707977" duration="12569000" />
+      <workItem from="1534003265103" duration="1157000" />
     </task>
     <task id="LOCAL-00001" summary="pom 文件添加常用的jar包">
       <created>1490371795870</created>
@@ -1686,43 +1623,50 @@
       <option name="project" value="LOCAL" />
       <updated>1533307218265</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="测试类中代码与配置文件修改">
+      <created>1534003475398</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1534003475399</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="MailUtilTest_sendText - 2018.08.04 at 00h 08m 12s.xml">
-      <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MailUtilTest_sendText - 2018.08.04 at 00h 16m 53s.xml">
-      <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MailUtilTest_sendText - 2018.08.04 at 00h 16m 59s.xml">
-      <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MailUtilTest_sendText - 2018.08.04 at 00h 17m 06s.xml">
-      <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MailUtilTest_sendText - 2018.08.04 at 00h 17m 12s.xml">
-      <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MailUtilTest_sendText - 2018.08.04 at 00h 17m 18s.xml">
-      <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MailUtilTest_sendText - 2018.08.04 at 00h 17m 36s.xml">
-      <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="MailUtilTest_sendText - 2018.08.04 at 00h 17m 44s.xml">
-      <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
-    </history-entry>
     <history-entry file="MailUtilTest_sendText - 2018.08.04 at 00h 18m 33s.xml">
       <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
     </history-entry>
     <history-entry file="MailUtilTest_sendText - 2018.08.04 at 00h 19m 28s.xml">
       <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
     </history-entry>
+    <history-entry file="MailUtilTest - 2018.08.04 at 10h 28m 17s.xml">
+      <configuration name="MailUtilTest" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailUtilTest_sendHtml - 2018.08.04 at 10h 29m 34s.xml">
+      <configuration name="MailUtilTest.sendHtml" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailUtilTest_sendHtml - 2018.08.04 at 10h 30m 04s.xml">
+      <configuration name="MailUtilTest.sendHtml" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailUtilTest_sendHtml - 2018.08.04 at 10h 30m 25s.xml">
+      <configuration name="MailUtilTest.sendHtml" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailUtilTest_sendText - 2018.08.04 at 11h 32m 32s.xml">
+      <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailUtilTest_sendText - 2018.08.04 at 11h 32m 31s.xml">
+      <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailUtilTest_sendText - 2018.08.04 at 11h 32m 33s.xml">
+      <configuration name="MailUtilTest.sendText" configurationId="JUnit" />
+    </history-entry>
+    <history-entry file="MailUtilTest - 2018.08.04 at 11h 32m 47s.xml">
+      <configuration name="MailUtilTest" configurationId="JUnit" />
+    </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="116498000" />
+    <option name="totallyTimeSpent" value="121096000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1735,9 +1679,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="784" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20731707" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28810975" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -1749,16 +1692,16 @@
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info active="true" anchor="bottom" id="Run" order="3" visible="true" weight="0.12660256" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.79954267" weight="0.0" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32852563" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.79954267" weight="0.5176282" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32923076" />
       <window_info anchor="bottom" id="Event Log" order="8" sideWeight="0.20045732" side_tool="true" weight="0.39903846" />
       <window_info anchor="bottom" id="Java Enterprise" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" sideWeight="0.3910061" weight="0.5480769" />
-      <window_info anchor="bottom" id="Terminal" order="11" weight="0.0" />
-      <window_info anchor="bottom" id="Version Control" order="12" weight="0.7616747" />
+      <window_info anchor="bottom" id="Terminal" order="11" weight="0.1856" />
+      <window_info anchor="bottom" id="Version Control" order="12" visible="true" weight="0.1616" />
       <window_info anchor="right" id="Commander" order="0" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.24962178" />
@@ -1771,7 +1714,7 @@
       <window_info anchor="right" id="Palette&#9;" order="9" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20731707" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28810975" />
       <window_info id="Structure" order="1" weight="0.25" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="3" />
@@ -1783,8 +1726,8 @@
       <window_info anchor="bottom" id="Database Changes" order="0" show_stripe_button="false" />
       <window_info anchor="bottom" id="Message" order="1" />
       <window_info anchor="bottom" id="Find" order="2" />
-      <window_info anchor="bottom" id="Run" order="3" visible="true" weight="0.45352563" />
-      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.79954267" weight="0.65384614" />
+      <window_info anchor="bottom" id="Run" order="3" weight="0.32852563" />
+      <window_info anchor="bottom" id="Debug" order="4" sideWeight="0.79954267" weight="0.5176282" />
       <window_info anchor="bottom" id="Cvs" order="5" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="7" weight="0.32923076" />
@@ -1840,7 +1783,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="添加注释日志" />
     <MESSAGE value="xiugai pom war - jar" />
     <MESSAGE value="添加结果集工具类-工程项目中返回结果" />
     <MESSAGE value="添加测试文件夹" />
@@ -1865,66 +1807,18 @@
     <MESSAGE value="删除文件夹" />
     <MESSAGE value="修改HTTPS协议请求代码，释放资源，使用try-with-resources方式" />
     <MESSAGE value="修改HTTP协议请求代码，抛出IO异常，简化输入参数，添加链接与读取超时时间" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改HTTP协议请求代码，抛出IO异常，简化输入参数，添加链接与读取超时时间" />
+    <MESSAGE value="测试类中代码与配置文件修改" />
+    <option name="LAST_COMMIT_MESSAGE" value="测试类中代码与配置文件修改" />
   </component>
   <component name="antWorkspaceConfiguration">
     <option name="IS_AUTOSCROLL_TO_SOURCE" value="false" />
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/DecimalUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/FileUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/FtpUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/ImageUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/Objects.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-133">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/SteamUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-652">
-          <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/RegExUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-272">
           <caret line="166" column="17" lean-forward="true" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/StringUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-748">
-          <caret line="14" column="4" selection-start-line="14" selection-start-column="4" selection-end-line="14" selection-end-column="4" />
         </state>
       </provider>
     </entry>
@@ -2005,13 +1899,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="9" column="18" lean-forward="true" selection-start-line="9" selection-start-column="18" selection-end-line="9" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/qrcode/zxing/ZxingResolveQrCode.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-291">
@@ -2071,20 +1958,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/006648abc">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="228">
-          <caret line="12" column="64" selection-start-line="12" selection-start-column="64" selection-end-line="12" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/006648abc.pub">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" selection-start-line="1" selection-end-line="1" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/006648abc" />
+    <entry file="file://$PROJECT_DIR$/006648abc.pub" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/banner.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="231">
@@ -2103,13 +1978,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="321">
           <caret line="75" column="14" selection-start-line="75" selection-start-column="8" selection-end-line="75" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/http/HttpsClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-544">
-          <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
         </state>
       </provider>
     </entry>
@@ -2162,10 +2030,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="173">
           <caret line="347" column="20" selection-start-line="347" selection-start-column="12" selection-end-line="347" selection-end-column="20" />
-          <folding>
-            <element signature="e#29523#29524#0" expanded="true" />
-            <element signature="e#29559#29560#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -2183,27 +2047,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/http/HttpClient.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="422">
-          <caret line="321" lean-forward="true" selection-start-line="321" selection-end-line="321" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/javax/mail/mail/1.4.7/mail-1.4.7-sources.jar!/javax/mail/internet/InternetAddress.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-7787">
           <caret line="672" column="28" lean-forward="true" selection-start-line="672" selection-start-column="28" selection-end-line="672" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://F:/Environment/Java/JDK/JDK8/src.zip!/java/lang/Class.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="2215" column="23" selection-start-line="2215" selection-start-column="12" selection-end-line="2215" selection-end-column="23" />
         </state>
       </provider>
     </entry>
@@ -2221,25 +2068,24 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/PropertieUtils.java">
+    <entry file="jar://F:/Environment/Java/JDK/JDK8/src.zip!/java/lang/ClassLoader.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="52">
-          <caret line="69" selection-start-line="69" selection-end-line="69" />
-          <folding>
-            <element signature="e#1808#1809#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="188">
+          <caret line="1258" column="23" selection-start-line="1258" selection-start-column="23" selection-end-line="1258" selection-end-column="23" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/mail/MailUtil.java">
+    <entry file="jar://F:/Environment/Java/JDK/JDK8/src.zip!/java/lang/Class.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="94">
-          <caret line="190" lean-forward="true" selection-start-line="190" selection-end-line="190" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#4320#4321#0" expanded="true" />
-            <element signature="e#4357#4358#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="41">
+          <caret line="2208" column="6" lean-forward="true" selection-start-line="2208" selection-start-column="6" selection-end-line="2208" selection-end-column="6" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/longyuzichen/core/mail/MailUtilTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="798">
+          <caret line="39" column="9" selection-start-line="39" selection-start-column="9" selection-end-line="39" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -2250,10 +2096,93 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/longyuzichen/core/mail/MailUtilTest.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/PropertieUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="343">
-          <caret line="77" selection-start-line="77" selection-end-line="77" />
+        <state relative-caret-position="52">
+          <caret line="69" selection-start-line="69" selection-end-line="69" />
+          <folding>
+            <element signature="e#1918#1919#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Environment/Java/JDK/JDK8/src.zip!/java/lang/StringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="146" column="52" lean-forward="true" selection-start-line="146" selection-start-column="52" selection-end-line="146" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Environment/Java/JDK/JDK8/src.zip!/java/lang/AbstractStringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="419" column="15" selection-start-line="419" selection-start-column="12" selection-end-line="419" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Environment/Java/JDK/JDK8/src.zip!/java/lang/StringBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="456" lean-forward="true" selection-start-line="456" selection-end-line="456" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/mail/MailUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="133" column="4" selection-start-line="133" selection-start-column="4" selection-end-line="136" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/http/HttpsClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="21">
+          <caret line="51" column="14" lean-forward="true" selection-start-line="51" selection-start-column="14" selection-end-line="51" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Environment/Java/JDK/JDK8/src.zip!/java/util/Map.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="145" column="12" selection-start-line="145" selection-start-column="12" selection-end-line="145" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://F:/Environment/Java/JDK/JDK8/src.zip!/java/util/HashMap.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="219">
+          <caret line="533" column="19" selection-start-line="533" selection-start-column="15" selection-end-line="533" selection-end-column="19" />
+          <folding>
+            <element signature="e#21303#21304#0" expanded="true" />
+            <element signature="e#21335#21336#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/util/StringUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="97" column="9" lean-forward="true" selection-start-line="97" selection-start-column="9" selection-end-line="97" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/longyuzichen/core/http/HttpClient.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3">
+          <caret line="41" column="31" lean-forward="true" selection-start-line="41" selection-start-column="31" selection-end-line="41" selection-end-column="31" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="16" column="28" lean-forward="true" selection-start-line="16" selection-start-column="28" selection-end-line="16" selection-end-column="28" />
         </state>
       </provider>
     </entry>

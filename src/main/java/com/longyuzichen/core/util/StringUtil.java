@@ -19,13 +19,16 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Map;
 
 /**
  * @desc 字符串工具
  * @auto longyuzichen@126.com
  * @date 2017-03-12 21:20
  */
-public class StringUtil {
+public final class StringUtil {
 
     private static final Logger log = LoggerFactory.getLogger(StringUtil.class);
 
@@ -82,5 +85,30 @@ public class StringUtil {
         }
         return returnString.toString();
     }
-
+    /**
+     * map集合转化为字符串（字符串以 & 连接）
+     *
+     * @param params Map集合对象
+     * @return
+     */
+    public static String map2String(Map<String, Object> params) {
+        StringBuilder sb = new StringBuilder();
+        if (null == params || params.isEmpty()) {
+            return "";
+        }
+        List<String> list = new ArrayList<String>(params.keySet());
+        if (list.size() == 0) {
+            return "";
+        }
+        for (int i = 0; i < list.size(); i++) {
+            String k = list.get(i);
+            Object v = params.get(k);
+            if (i == list.size()) {
+                sb.append(k).append("=").append(v);
+            } else {
+                sb.append(k).append("=").append(v).append("&");
+            }
+        }
+        return sb.toString();
+    }
 }
