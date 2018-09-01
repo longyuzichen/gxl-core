@@ -103,7 +103,7 @@ public final class StringUtil {
         for (int i = 0; i < list.size(); i++) {
             String k = list.get(i);
             Object v = params.get(k);
-            if (i == list.size()) {
+            if (i == list.size()-1) {
                 sb.append(k).append("=").append(v);
             } else {
                 sb.append(k).append("=").append(v).append("&");
