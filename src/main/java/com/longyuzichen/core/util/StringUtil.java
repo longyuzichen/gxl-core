@@ -22,6 +22,7 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @desc 字符串工具
@@ -85,30 +86,25 @@ public final class StringUtil {
         }
         return returnString.toString();
     }
+
     /**
      * map集合转化为字符串（字符串以 & 连接）
      *
      * @param params Map集合对象
-     * @return
+     * @return 返回字符串，map为空时返回""
      */
     public static String map2String(Map<String, Object> params) {
         StringBuilder sb = new StringBuilder();
         if (null == params || params.isEmpty()) {
             return "";
         }
-        List<String> list = new ArrayList<String>(params.keySet());
-        if (list.size() == 0) {
-            return "";
+
+        for (Map.Entry<String, Object> entry : params.entrySet()) {
+            String key = entry.getKey();
+            Object value = entry.getValue();
+            sb.append(key).append("=").append(value).append("&");
         }
-        for (int i = 0; i < list.size(); i++) {
-            String k = list.get(i);
-            Object v = params.get(k);
-            if (i == list.size()-1) {
-                sb.append(k).append("=").append(v);
-            } else {
-                sb.append(k).append("=").append(v).append("&");
-            }
-        }
-        return sb.toString();
+
+        return sb.substring(0, sb.length() - 1).toString();
     }
 }
